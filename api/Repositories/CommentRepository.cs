@@ -41,7 +41,7 @@ namespace api.Repositories
 
         public async Task<List<Comment>> GetAllAsync(CommentQueryObject queryObject)
         {
-            var comments = _context.Comments.AsQueryable();
+            var comments = _context.Comments.Include(a => a.AppUser).AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
             {
@@ -58,7 +58,7 @@ namespace api.Repositories
 
         public async Task<Comment?> GetByIdAsync(int id)
         {
-            return await _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
+            return await _context.Comments.Include(a => a.AppUser).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<Comment?> UpdateAsync(int id, Comment commentModel)

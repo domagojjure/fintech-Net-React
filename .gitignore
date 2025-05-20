@@ -1,5 +1,6 @@
 # Ignore ASP.NET Core appsettings files
 appsettings.json
 appsettings.Development.json
-api/bin/Debug/net9.0/appsettings.json
+bin/Debug/net9.0/appsettings.json
+
 api/bin/Debug/net9.0/appsettings.json
