@@ -4,3 +4,7 @@ appsettings.Development.json
 bin/Debug/net9.0/appsettings.json
 
 api/bin/Debug/net9.0/appsettings.json
+frontend/.env
+frontend/.env
+
+.fake

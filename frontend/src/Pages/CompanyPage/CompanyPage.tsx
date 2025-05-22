@@ -6,6 +6,7 @@ import Sidebar from '../../Components/Sidebar/Sidebar';
 import CompanyDashboard from '../../Components/CompanyDashboard/CompanyDashboard';
 import Tile from '../../Components/Tile/Tile';
 import TenKFinder from '../../Components/TenKFinder/TenKFinder';
+import Spinner from '../../Components/Spinners/Spinner';
 
 interface Props { }
 
@@ -25,7 +26,6 @@ const CompanyPage = (props: Props) => {
         <>
             {company ? (
                 <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
-
                     <Sidebar />
                     <CompanyDashboard ticker={ticker!}>
                         <Tile title='Company name' subTitle={company.companyName} />
@@ -37,10 +37,9 @@ const CompanyPage = (props: Props) => {
                             {company.description}
                         </p>
                     </CompanyDashboard>
-
                 </div>
             ) : (
-                <div>Company not found</div>
+                <Spinner/>
             )}
 
         </>
